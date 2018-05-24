@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+ 
+    <title>Document</title>
+    
+    <link rel="stylesheet" type="text/css" href="\UI Stuff\styles.css" />
+    <script async defer type="text/javascript" src="\js\popup.js"></script>
+   
+     
+    
+
+    
+
+
+</head>
+
+<body>
+
+    <div id="kittyContainer" class="container">
+
+        <img src="\UI Stuff\kittyLogoTest.png" alt="kittyPath" width="500" height="181">
+    </div>
+
+    <div class="dropdown">
+        <button id="searchButton" class="kitty-button">Search</button>
+        <div id="myDropdownSearch" class="dropdown-contentSearch">
+             
+            <iframe src="\html\classSearch.html" width="500" height="400" sandbox="allow-scripts allow-modals"></iframe>
+                
+     </div>
+    </div>
+
+    <div class="dropdown">
+        <button id="planButton" class="kitty-button">Plan</button>
+        <div id="myDropdownPlan" class="dropdown-contentPlan">
+           
+            
+            
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button id="enrollButton" class="kitty-button ">Enroll</button>
+        <div id="myDropdownEnroll" class="dropdown-contentEnroll">
+            
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button id="auditButton" class="kitty-button">Degree Audit</button>
+        <div id="myDropdownAudit" class="dropdown-contentAudit">
+          <button id="gpaButton" class="modal-button">View GPA</button>
+          <!-- The Modal -->
+          <div id="gpaModal" class="modal">
+            <!-- Modal content -->
+           <div class="gpaModalContent">
+            <span class="close">&times;</span>
+            <button id ="cumButton" class="modal-button">Cumulative GPA</button>
+            <button id="majButton" class="modal-button">Major Gpa</button>
+          </div>
+        </div>
+
+          <button id="unfulfilledButton" class="modal-button">Unfulfilled Requirements</button>
+
+          <div id="unfulfilledModal" class="requirementsModal">
+            <div class="unfulfilledModalContent">
+              <span class="close">&times;</span>
+              <table class="RequirementsContent">
+                <TH><strong>Unfulfilled Requirements</strong></TH><TH><strong>Number of credits unfulfilled</strong></TH>
+                <TR><TD>Put type of requirement here.<br/> Ex. GN</TD><TD>Put number of credits left here</TD></TR>
+              </table>
+            </div>
+          </div>
+
+          <button id="CurrentClassButton" class="modal-button">Current Classes</button>
+          <div id="currentClassModal" class="classModal">
+            <div class="currentClassContent">
+              <table id="ClassesTable" class="ClassTable">
+                <TH><strong>Course Number</strong></TH><TH><strong>Course Name</strong></TH><TH><strong>Units</strong></TH>
+                <TR><TD>CMPSC430</TD><TD>Database Design</TD><TD>3.00</TD></TR>
+              </table>
+            </div>
+          </div>
+
+          <button id="NotSatisfyingButton" class="modal-button">Credits Not Used</button>
+          <div id="NotSatisfyingModal" class="NotUsed">
+            <div class="NotUsedContent">
+              <table class="CreditsNotUsedTable">
+                <TH><strong>Course Number</strong></TH><TH><strong>Course Name</strong></TH><TH><strong>Units</strong></TH>
+                <TR><TD>CMPSC430</TD><TD>Database Design</TD><TD>3.00</TD></TR>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    <div class="dropdown">
+        <button id="selectionButton" class="kitty-button">Course Selection</button>
+        <div id="myDropdownSelection" class="dropdown-contentSelection">
+            
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+body {
+    margin: 0px !important;
+    border-radius: 0px;
+    background-color: #152F50;
+    background-image:url("backGround.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment:fixed;
+    height:10%;
+    width:10%;
+  }
+  .psuLogo{
+    position:absolute;
+    margin-left:100px;
+    
+  }
+  .mainButtons{
+      position:absolute;
+  }
+  #search{
+    top:200px;
+    left:300px;
+  }
+  #courseSelection{
+    top:200px;
+    left:600px;
+  }
+  #degreeAudit{
+top:400px;
+left:300px;
+  }
+  #plan{
+top:400px;
+left:300px;
+  }

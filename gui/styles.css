@@ -1,0 +1,1862 @@
+/* this is the maximum height for a chrome extension */
+
+/*body {
+  height: 600px;
+}*/
+
+/*
+$color1: rgba(0, 7, 45, 164);
+$color2: rgba(0, 28, 85, 1);
+$color3: rgba(10, 36, 114, 1);
+$color4: rgba(14, 107, 168, 1);
+$color5: rgba(166, 225, 250, 1);
+*/
+
+body {
+  margin: 0px !important;
+  border-radius: 0px;
+  background-color: black;
+}
+
+li {
+  color: white;
+  font-size: 15px;
+}
+
+nav ul {
+  height: auto;
+}
+
+#wrapper {
+  margin-left: 0px;
+  margin-right: auto;
+  width: 960px;
+}
+
+.header {
+  margin-bottom: 0;
+  height: 10%;
+  width: 100%;
+  background-color: #343430;
+}
+
+
+.pawLogo{
+  position:absolute;
+  top:16px;
+  left:82px;
+  bottom:60px;
+
+  animation-name: fadeInDown;
+  animation-duration: 2s;
+}
+
+/* The Modal (background) */
+
+.csModals {
+  display: none;
+  /* Hidden by default */
+  /* Stay in place */
+  position:fixed;
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  height:800px;
+  width:500px;
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Black w/ opacity */
+  animation-name: fadeIn;
+  animation-duration: 1.3s;
+}
+
+/* Modal Content/Box */
+
+.csModalContent {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+
+.csModalClose {
+  color: #aaa;
+  float: right;
+  margin-right: 12px;
+  margin-top:222px;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+.csModalClose:hover,
+.csModalClose:focus {
+  color: grey;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.classTitlesCS {
+  color: rgb(85, 241, 252);
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-top:200px;
+  left: 20px;
+}
+
+.tableGuy {
+  background-image: url(greyBG.png);
+  width: 450px;
+  color: white;
+  border: 1;
+}
+#recTable{
+  width:500px;
+}
+.CStableGuy {
+  background-image: url(darkGreyBG.png);
+  margin-left:20px;
+  width: 450px;
+  color: white;
+  border: 1;
+}
+.CStableGuy{
+  width:450px;
+  color:white;
+  border:1;
+}
+
+
+/*background-color:#7E8473 greyish tan
+44355B PURPLE
+D4C685 yellow
+BA6612 orange
+
+
+*/
+.savedCourses {
+ /* background-color:#BA6612;*/
+ background-image: url(greyBG.png);
+  width: 500px;
+  color: white;
+  border: 1;
+  font-size: 20px;
+}
+
+#SCtitle {
+  margin-left: 20px;
+  width: 500px;
+  border: ridge;
+  border-color: #3498db;
+  color: white;
+  size: 3px;
+}
+
+.csModalButtons {
+  position:absolute;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  border: groove rgb(14, 107, 168) 1px;
+  text-decoration: none;
+}
+
+#cs0Modal {
+  margin-top: 2px;
+  margin-left: 185px;
+  
+}
+
+#cs1Modal {
+  margin-top: 30px;
+  margin-left: 185px;
+}
+
+#cs2Modal {
+  margin-top: 58px;
+  margin-left: 185px;
+}
+
+#cs3Modal {
+  margin-top: 86px;
+  margin-left: 185px;
+}
+
+#cs4Modal {
+  margin-top: 114px;
+  margin-left: 185px;
+}
+
+#cs5Modal {
+  margin-top: 142px;
+  margin-left: 185px;
+}
+
+#cs6Modal {
+  margin-top: 170px;
+  margin-left: 185px;
+}
+
+.savedCourseClear {
+  /*position: absolute;
+  height: 20px;
+  width: 25px;
+  margin-right: 0px;
+  margin-left: 465px;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #FFA500;
+  border: groove rgb(14, 107, 168) 1px;
+  text-decoration: none;
+  font-size:16px;*/
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+ 
+    color: white;
+    border: 0px solid #AEAEAE;
+   /* background: #605F61;*/
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 0px;
+    padding: 11px 3px;
+    position:absolute; 
+  margin-right: 0px;
+  margin-left: 465px;
+}
+
+#cs0Exit {
+  margin-top: 2px;
+}
+
+#cs1Exit {
+  margin-top: 30px;
+}
+
+#cs2Exit {
+  margin-top: 58px;
+}
+
+#cs3Exit {
+  margin-top: 86px;
+}
+
+#cs4Exit {
+  margin-top: 114px;
+}
+
+#cs5Exit {
+  margin-top: 142px;
+}
+
+#cs6Exit {
+  margin-top: 170px;
+}
+
+.savedCourseButton {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border: 1px solid #888888;
+  border-color: #888888;
+  position: absolute;
+  font-family: Georgia;
+  color: #ffffff;
+  top: 280px;
+  left: 190px;
+  bottom: 20px;
+  height: 40px;
+  width: 120px;
+  text-decoration: none;
+}
+
+.savedCourseButton:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  text-decoration: none;
+}
+
+.planTbale {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 20%;
+  color: white;
+}
+
+.table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 20%;
+}
+
+.td {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 10px;
+}
+
+.tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+input[type="search"] {
+  position: absolute;
+  left: 3%;
+  width: 100%;
+  border: 3px solid #00b4cc;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px;
+  outline: none;
+}
+
+.search_bar input[type="text"] {
+  position: absolute;
+  top: 27px;
+  left: 30px;
+  background-color: white;
+  color: grey;
+}
+
+.chosen {
+  width: 474px !important;
+  background-color: #f0f0f0;
+  font-size: 14px;
+  border-radius: 5px;
+  color: black;
+  margin-top: 55px;
+}
+
+.recentry {
+  width: 75%;
+}
+
+.courseLink{
+  color: #3cb0fd;
+}
+.courseLink:hover{
+  cursor: pointer;
+}
+.recentrycred {
+  position: absolute;
+  width: 25%;
+}
+
+.container {
+  position: relative;
+  color: white;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.top-left {
+  /*Degree Audit*/
+  position: absolute;
+  top: 100px;
+  left: 105px;
+}
+
+.modal-button {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  border: groove rgba(14, 107, 168, 1) 1px;
+  text-decoration: none;
+}
+
+.modal-button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  text-decoration: none;
+}
+
+#gpaButton {
+  font-size: 20px;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+}
+
+#unfulfilledButton {
+  font-size: 20px;
+  position: absolute;
+  top: 120px;
+  left: 40px;
+  right: 40px;
+}
+
+#unfulfilledlist {
+  width:430px;
+}
+
+#CurrentClassButton {
+  font-size: 20px;
+  position: absolute;
+  top: 40px;
+  left: 300px;
+  right: 40px;
+}
+
+#NotSatisfyingButton {
+  font-size: 20px;
+  position: absolute;
+  top: 120px;
+  left: 300px;
+  right: 40px;
+}
+
+/* The Modal (background) */
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 50;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+#gpaModalContent{
+  position:absolute;
+  top:100px;
+  left:20px;
+}
+
+.GPAModel1 {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 50;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.requirementsModal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 50;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.classModal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 50;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.NotUsed {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 50;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+.gpaModalContent {
+  margin: 5% auto;
+  /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 500px;
+  height: 125px;
+  /* Could be more or less, depending on screen size */
+  background-image: url("blueBG.png");
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+  margin: 5% auto;
+  /* 15% from the top and centered */
+  border: 1px solid #888;
+  width: 420px;
+  height: 530px;
+  /* Could be more or less, depending on screen size */
+  background-image: url("greyBG.png");
+}
+
+.HelpText {
+  text-align: left;
+  font-size: 12px;
+  padding-left: 10pt;
+  color: white;
+}
+
+.HelpHeader {
+  text-align: left;
+  padding-left: 5pt;
+  color: white;
+}
+
+.ContactUsHeader {
+  text-align: center;
+  padding-right: 100pt;
+  color: white;
+  font-size: 12px;
+  /* text-decoration: underline;*/
+}
+
+.ContactText {
+  text-align: center;
+  font-size: 12px;
+  padding-right: 100pt;
+  color: white;
+}
+
+/* Style the tab */
+
+.CSTab {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  font-family: Georgia;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+  position: absolute;
+  padding: 18px 5px;
+  width: 100%;
+  overflow: hidden;
+  margin-left: 0px;
+}
+
+/* Style the buttons that are used to open the tab content */
+
+.CSTab button {
+  top: 0px;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  border: none;
+  font-family: Georgia;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 5px;
+  border-radius: 10px;
+}
+
+#savedCS {
+  width: 240px;
+  position: absolute;
+  top: 3px;
+}
+
+#reccCS {
+  width: 240px;
+  position: absolute;
+  left: 255px;
+  top: 3px;
+}
+
+/* Change background color of buttons on hover */
+
+.CSTab button:hover {
+  background-color: rgb(87, 84, 84);
+}
+
+/* Create an active/current tablink class */
+
+.CSTab button.active {
+  background-color: rgb(87, 84, 84);
+}
+
+.CSTabContent {
+  display: none;
+  padding: 6px 12px;
+  position: absolute;
+  top: 50px;
+}
+
+.searchTab {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  font-family: Georgia;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+  position: absolute;
+  padding: 14px 10px;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 0px;
+}
+
+/* Style the buttons that are used to open the tab content */
+
+.searchTab button {
+  top: 0px;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  border: none;
+  font-family: Georgia;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 5px;
+  width: 45%;
+}
+
+/* Change background color of buttons on hover */
+
+.searchTab button:hover {
+  background-color: rgb(87, 84, 84);
+}
+
+/* Create an active/current tablink class */
+
+.searchTab button.active {
+  background-color: rgb(87, 84, 84);
+}
+
+.SearchTabContent {
+  display: none;
+  padding: 6px 12px;
+  position: absolute;
+  top: 50px;
+}
+
+.reqClasses {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  font-family: Georgia;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+  position: absolute;
+  padding: 4px 5px;
+  width: 20%;
+  overflow: hidden;
+  top: 150px;
+  left: 20px;
+}
+
+#GeneralRequirements {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+
+#AttributeHeader {
+  position: absolute;
+  top: 7px;
+  left: 10px;
+}
+
+#CourseSubjectHeader {
+  position: absolute;
+  top: 7px;
+  width: 150px;
+  left: 260px;
+}
+
+#AreaStudy {
+  position: absolute;
+  top: 50px;
+  left: 250px;
+}
+
+#NeededClassesSubmitButton {
+  position: absolute;
+  top: 160px;
+  padding: 4px 5px;
+  width: 100px;
+  left: 7px;
+}
+
+#GPACalculator {
+  position:absolute;
+  top: 12px;
+  left: 220px;
+  padding: 3px 4px;
+}
+
+#RecommendRadioHeader {
+  position: absolute;
+  top: 140px;
+  left: 120px;
+}
+
+.RecommendRadio {
+  position: absolute;
+  top: 155px;
+  left: 400px;
+}
+
+#AttributeSubmitButton {
+  position: absolute;
+  top: 51px;
+  left: 225px;
+  padding: 4px 5px;
+  width: 90px;
+}
+
+#GenEdCourses {
+  position: absolute;
+  top: 92px;
+  left: 13px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.GenEdOption:hover {
+  background: #3498db;
+}
+/* Style the buttons that are used to open the tab content */
+
+.reqClasses button {
+  top: 0px;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  border: none;
+  font-family: Georgia;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 14px 5px;
+  width: 45%;
+}
+
+/* Change background color of buttons on hover */
+
+.reqClasses button:hover {
+  background-color: rgb(87, 84, 84);
+}
+
+/* Create an active/current tablink class */
+
+/*.reqClasses button.active {
+  background-color: rgb(87, 84, 84);
+}*/
+
+.reqClassesContent {
+  display: none;
+  padding: 6px 12px;
+  position: absolute;
+  top: 180px;
+}
+
+.ReqClassHeadElement {
+  width: 38%;
+  border: ridge;
+  border-color: #3498db;
+}
+
+.ReqClassRowElement {
+  width: 38%;
+  border: groove;
+  border-color: #3498db;
+  color: white;
+  border-width: 1px;
+}
+
+.dropMajorSelect {
+  width: 440px;
+  height: 27px;
+  overflow: hidden;
+  background-color: black;
+  background: url(campus_arrow.jpg) no-repeat right #ddd;
+  border: 1px solid #ccc;
+  
+}
+
+
+.dropMajorSelect select {
+  background: transparent;
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none;
+}
+#MajorSelect{
+  position:absolute;
+  left:10px;
+  top:0px;
+}
+
+.dropselectSemester {
+  width: 200px;
+  height: 28px;
+  overflow: hidden;
+  background-color: black;
+  background: url(campus_arrow.jpg) no-repeat right #ddd;
+  border: 1px solid #ccc;
+  margin-left: 250px;
+  position: relative;
+  top: -28px;
+}
+
+
+.dropselectSemester select {
+  background: transparent;
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none;
+}
+
+.SemesterLabel {
+  position: absolute;
+  top: 5px;
+}
+
+.majorLabel {
+  position: absolute;
+  top: 80px;
+}
+
+#SemeseterSelection1 {
+  position: absolute;
+  top: 55px;
+}
+
+#MajorNamefuck {
+  position: absolute;
+  top: 65px;
+  font-size: 14px;
+}
+
+#RecommendedCoursesTitle {
+  position: absolute;
+  top: 120px;
+}
+
+#reccomandedCourses {
+  position: absolute;
+  top: 105px;
+  padding: 5px 20px;
+}
+
+#CourseReq{
+  position: absolute;
+  left: 5px;
+  top: 3px;
+  padding: 10px 10px;
+  width: 240px;
+  border-radius: 10px;
+}
+#CourseID {
+  position: absolute;
+  left: 250px;
+  width: 240px;
+  top: 3px;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
+
+.dropMajorSelect {
+  position: absolute;
+  top: 120px;
+  left: 10px;
+}
+
+/* Style the tab */
+
+.auditTab {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  font-family: Georgia;
+  color: #ffffff;
+  border: none;
+  text-decoration: none;
+  position: absolute;
+  top: 35px;
+  padding: 21px 5px;
+  width: 100%;
+}
+
+/* Style the buttons that are used to open the tab content */
+
+.auditTab button {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  border: none;
+  font-family: Georgia;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 9px 3px;
+  width: 20.5%;
+}
+
+/* Change background color of buttons on hover */
+
+.auditTab button:hover {
+  background-color: rgb(87, 84, 84);
+}
+
+/* Create an active/current tablink class */
+
+.auditTab button.active {
+  background-color: rgb(87, 84, 84);
+}
+
+.auditTabContent {
+  display: none;
+  padding: 6px 12px;
+}
+
+#GPACalculator {
+  position: absolute;
+  top: 5px;
+  left: 380px;
+  padding: 15px 11px;
+  width: 20%;
+  border-radius: 10px;
+  /*border-style: inset;
+  border-color: grey;
+  border-width: 1px;*/
+}
+
+#NotUsed {
+  position: absolute;
+  top: 5px;
+  left: 253px;
+  padding: 7px 6px;
+  border-radius: 10px;
+  /*border-style: inset;
+  border-color: grey;
+  border-width: 1px;*/
+}
+
+#CurrentClasses {
+  position: absolute;
+  top: 5px;
+  left: 130px;
+  padding: 15px 11px;
+  width: 20%;
+  border-radius: 10px;
+  /*border-style: inset;
+  border-color: grey;
+  border-width: 1px;*/
+}
+
+#UnfulfilledReqs {
+  position: absolute;
+  top: 5px;
+  left: 3px;
+  padding: 7px 4px;
+  border-radius: 10px;
+  /*border-style: inset;
+  border-color: grey;
+  border-width: 1px;*/
+}
+
+.unfulfilledClass {
+  display: none;
+  padding: 6px 12px;
+  position: absolute;
+  top: 100px;
+}
+
+.gpabox {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  font-family: Georgia;
+  color: #ffffff;
+  border: groove rgb(14, 107, 168) 1px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  text-decoration: none;
+  width: 30%;
+  position: absolute;
+  top: 10px;
+  /*padding: 3px 3px;*/
+}
+
+
+.GPAContent {
+  background-image: url("blueBG.png");
+  font-family: Georgia;
+  color: #ffffff;
+  border: groove rgba(14, 107, 168, 1) 1px;
+  text-decoration: none;
+  top: 150px;
+  right: 40px;
+  left: 60px;
+  bottom: 0px;
+  margin: 5% auto;
+  border-style: solid;
+  width: 100%;
+  height: 100px;
+  padding: 15px;
+  text-align: center;
+}
+
+.RequirementsContent {
+  background-image: url("blueBG.png");
+  font-family: Georgia;
+  color: #ffffff;
+  border: groove rgba(14, 107, 168, 1) 1px;
+  text-decoration: none;
+  top: 50%;
+  right: 40px;
+  margin: 5% auto;
+  border-style: solid;
+  width: 100%;
+  height: 100px;
+  padding: 15px;
+  text-align: center;
+}
+
+.ClassTable {
+  background-image: url("blueBG.png");
+  font-family: Georgia;
+  color: #ffffff;
+  border: groove rgba(14, 107, 168, 1) 1px;
+  text-decoration: none;
+  top: 150px;
+  right: 40px;
+  margin: 5% auto;
+  border-style: solid;
+  width: 100%;
+  height: 100px;
+  padding: 15px;
+  text-align: left;
+}
+
+.CreditsNotUsedTable {
+  background-image: url("blueBG.png");
+  font-family: Georgia;
+  color: #ffffff;
+  border: groove rgba(14, 107, 168, 1) 1px;
+  text-decoration: none;
+  top: 150px;
+  right: 40px;
+  margin: 5% auto;
+  border-style: solid;
+  width: 100%;
+  height: 100px;
+  padding: 15px;
+  text-align: left;
+}
+
+#cumButton {
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  font-size: 20px;
+}
+
+#majButton {
+  position: absolute;
+  right: 100px;
+  top: 100px;
+  font-size: 20px;
+}
+
+/* The Close Button */
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gpaClose {
+  color: #aaa;
+  float: right;
+  font-size: 36px;
+  font-weight: bold;
+
+  
+}
+
+.gpaClose:hover,
+.gpaClose:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#gpaModalClose{
+  position:absolute;
+  right:18px;
+  top:100px;
+
+}
+.top-right {
+  /*Course Selection*/
+  position: absolute;
+  top: 100px;
+  right: 500px;
+}
+
+.bottom-left {
+  /*Plan*/
+  position: absolute;
+  bottom: 15px;
+  left: 70px;
+}
+
+.bottom-centered {
+  /*Search*/
+  position: absolute;
+  bottom: 15px;
+  right: 650px;
+}
+
+.bottom-right {
+  /*Help*/
+  position: absolute;
+  bottom: 15px;
+  right: 460px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.friedHands{
+  position:absolute;
+}
+#fhand1{
+top:20px;
+left:100px;
+animation-name:bounceInDown;
+  animation-duration: 3s;
+}
+
+#fhand2{
+  top:100px;
+  left:50px;
+  animation-name:bounceInRight;
+  animation-duration: 3s;
+}
+#fhand3{
+  top:200px;
+  left:300px;
+  animation-name:bounceInLeft;
+  animation-duration: 3s;
+}
+#fhand4{
+  top:100px;
+  left:400px;
+  animation-name:bounceInUp;
+  animation-duration: 3s;
+}
+#fhand5{
+  top:60px;
+  left:250px;
+  animation-name:bounceInDown;
+  animation-duration: 3s;
+}
+
+.kitty-button {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  border: groove rgb(14, 107, 168) 1px;
+  text-decoration: none;
+  animation-name: fadeInDown;
+  animation-duration: 2s;
+}
+
+.kitty-button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  text-decoration: none;
+  
+}
+#addc{
+  animation-name: none;
+  animation-duration: 2s;
+}
+#starto{
+  animation-name: none;
+  animation-duration: 2s;
+}
+
+#semester {
+  position: absolute;
+  top: 7px;
+  right: 10px;
+  width: 100px;
+  height: 24px;
+}
+
+#theme{
+  font-size: 12px;
+  padding: 4px 8px 4px 8px;
+  position: absolute;
+  top:5px;
+  right: 15px;
+}
+
+#searchButton {
+  font-size: 20px;
+  padding: 4px 8px 4px 8px;
+  position: absolute;
+  bottom: 20px;
+  left: 65px;
+}
+
+#planButton {
+  font-size: 20px;
+  padding: 4px 8px 4px 8px;
+  bottom: 20px;
+  left: 225px;
+  position: absolute;
+}
+
+#helpButton {
+  font-size: 20px;
+  padding: 4px 8px 4px 8px;
+  position: absolute;
+  bottom: 20px;
+  left: 370px;
+}
+
+
+#auditButton {
+  font-size: 20px;
+  padding: 4px 16px 4px 16px;
+  position: absolute;
+  width: 151px;
+  bottom: 63px;
+  left: 92px;
+}
+
+#selectionButton {
+  font-size: 20px;
+  padding: 2px 30px 2px 30px;
+  position: absolute;
+  width: 210px;
+  height: 34px;
+  bottom: 63px;
+  left: 255px;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+  background-color: #2980b9;
+}
+
+.dropdown {
+  position: absolute;
+  display: inline-block;
+}
+
+/*leaving dropdown css for future changes*/
+
+.dropdown-contentSearch {
+  display: none;
+  position: absolute;
+  background-image: url(menuBG.jpg);
+  width: 506px;
+  height: 537px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+}
+
+.dropdown-contentPlan {
+  display: none;
+  position: absolute;
+  background-image: url(menuBG.jpg);
+  min-width: 600px;
+  min-height: 600px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+}
+
+.dropdown-contentHelp {
+  display: none;
+  position: absolute;
+  background-image: url(menuBG.jpg);
+  min-width: 600px;
+  min-height: 600px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+}
+
+.dropdown-contentFried {
+  display: none;
+  position: absolute;
+  background-image: url(friedNa.png);
+  min-width: 600px;
+  min-height: 600px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+}
+
+.dropdown-contentAudit {
+  display: none;
+  position: absolute;
+  background-image: url(menuBG.jpg);
+  min-width: 600px;
+  min-height: 600px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+}
+
+.dropdown-contentSelection {
+  display: none;
+  position: absolute;
+  height: 600px;
+  background-image: url(menuBG.jpg);
+  width: 600px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {
+  background-color: #f1f1f1;
+}
+
+.show {
+  display: block;
+}
+
+.courseNameRadio {
+  top: 10px;
+  position: absolute;
+}
+
+.courseReqRadio {
+  position: absolute;
+  top: 10px;
+  left: 300px;
+}
+
+.class_search  {
+  width:275px;
+  height:30px;
+  margin-top: 10px;
+  margin-left:10px;
+}
+
+#search-input{
+  width:275px;
+  height:30px;
+  margin-top: 10px;
+  margin-left:10px;
+}
+
+#goBack {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border: 1px solid #888888;
+  border-radius: 75%;
+  border-color: #888888;
+  position: absolute;
+  font-family: Georgia;
+  color: #ffffff;
+  top: 58px;
+  left: 405px;
+  bottom: 70px;
+  height: 30px;
+  width: 50px;
+  font-size: 25px;
+  padding:0px;
+  text-align:top;
+  text-decoration: none;
+}
+
+
+
+#clearSearch {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border: 1px solid #888888;
+  border-color: #888888;
+  position: absolute;
+  font-family: Georgia;
+  color: #ffffff;
+  top: 59px;
+  left: 300px;
+  bottom: 70px;
+  height: 27px;
+  width: 95px;
+  text-decoration: none;
+}
+#goBack:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  text-decoration: none;
+}
+
+#saveClassbtn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border: 1px solid #888888;
+  border-color: #888888;
+  position: absolute;
+  font-family: Georgia;
+  color: #ffffff;
+  left: 3px;
+  bottom: 6px;
+  height: 20px;
+  width: 95px;
+  text-decoration: none;
+}
+
+#saveClassbtn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  text-decoration: none;
+}
+
+#clearSearch:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(166, 225, 250, 1));
+  text-decoration: none;
+}
+
+#search-label {
+  float: left;
+}
+
+.selectCampusBtn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -moz-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -ms-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: -o-linear-gradient(top, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  background-image: linear-gradient(to bottom, rgba(14, 107, 168, 1), rgba(0, 7, 45, 164));
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  border: groove rgba(14, 107, 168, 1) 1px;
+  text-decoration: none;
+}
+
+.dropselectCampusDropDown {
+  width: 200px;
+  height: 28px;
+  overflow: hidden;
+  background-color: black;
+  background: url(campus_arrow.jpg) no-repeat right #ddd;
+  border: 1px solid #ccc;
+  margin-left: 10px;
+}
+
+.dropselectCampusDropDown select {
+  background: transparent;
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none;
+}
+#ncredits{
+  width:50px;
+
+  background-color: black;
+  background: url(campus_arrow.jpg) no-repeat right #ddd;
+}
+#grades{
+
+  background-color: black;
+  background: url(campus_arrow.jpg) no-repeat right #ddd;
+  width:50px;
+}
+
+.schedule_Date
+{
+  position:absolute;
+  width:400px;
+  height:200px;
+  top:0px;
+  right:122px;
+
+  
+}
+#regTitle{
+  top:0px;
+  right:80px;
+  left:120px;
+  font-size: 16px;
+  color:white;
+}
+#scheduleDate{
+  top:0px;
+  right:20px;
+  left:280px;
+  font-size: 16px;
+  color:cyan;
+}
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+@keyframes bounce {
+  from,
+  20%,
+  53%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  40%,
+  43% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+  70% {
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    -webkit-transform: translate3d(0, -15px, 0);
+    transform: translate3d(0, -15px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
+}
+
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+
+.loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #3498db;
+  width: 10px;
+  height: 10px;
+  margin-left: 280px;
+  margin-top: 27px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.class_section {
+  color:white;
+  font-size: 17px; 
+  margin-bottom: 0px;
+}
+.class_section:hover {
+  cursor: pointer;
+  color: #3498db;
+}
+
+#GenCourses {
+    width: 474px !important;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.bullyLink {
+  border-bottom: none;
+  text-decoration: none;
+  color: orangered;
+}
+
+#semester {
+  position: absolute;
+  font-size: 12px;
+  padding: 4px 8px 4px 8px;
+  position: absolute;
+  top:5px;
+  right: 15px;
+}
+

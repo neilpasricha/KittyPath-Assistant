@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+    
+	/* Container holding the image and the text */
+    #wrapper{
+    margin-left:0px;
+    margin-right:auto;
+    width:960px;
+    }
+
+
+.header{
+margin-bottom:0;
+height:10%; 
+width:100%;
+background-color:#343430;
+}
+
+.search_bar input[type="text"]{
+position:absolute;  
+top:27px;
+left:30px;
+
+background-color:white; 
+color:grey;
+}
+.container {
+    position: relative;
+    
+    color: white;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.top-left {/*Degree Audit*/
+    position: absolute;
+    top: 100px;
+    left: 105px;
+}
+
+.top-right {/*Course Selection*/
+    position: absolute;
+    top: 100px;
+    right: 500px;
+}
+
+.bottom-left { /*Plan*/
+    position: absolute;
+    bottom: 15px;
+    left: 70px;
+}
+
+.bottom-centered {/*Search*/
+    position: absolute;
+    bottom: 15px;
+    right: 650px;
+}
+
+.bottom-right {/*Enroll*/
+    position: absolute;
+    bottom: 15px;
+    right: 460px;
+}
+
+
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.dropbtnSearch {
+    background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #000080);
+  background-image: -moz-linear-gradient(top, #3498db, #000080);
+  background-image: -ms-linear-gradient(top, #3498db, #000080);
+  background-image: -o-linear-gradient(top, #3498db, #000080);
+  background-image: linear-gradient(to bottom, #3498db, #000080);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 4px 8px 4px 8px;
+  border: solid #ffda7d 2px;
+  text-decoration: none;
+  
+   
+    position:absolute;
+    bottom:20px;
+    left:65px;
+}
+
+.dropbtnPlan {
+    
+
+    background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #000080);
+  background-image: -moz-linear-gradient(top, #3498db, #000080);
+  background-image: -ms-linear-gradient(top, #3498db, #000080);
+  background-image: -o-linear-gradient(top, #3498db, #000080);
+  background-image: linear-gradient(to bottom, #3498db, #000080);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 4px 8px 4px 8px;
+  border: solid #ffda7d 2px;
+  text-decoration: none;
+  bottom:20px;
+    left:212px;
+    position:absolute;
+}
+.dropbtnPlan:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -o-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: linear-gradient(to bottom, #3cb0fd, #ffd736);
+  text-decoration: none;
+}
+
+.dropbtnSearch:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -o-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: linear-gradient(to bottom, #3cb0fd, #ffd736);
+  text-decoration: none;
+}
+
+.dropbtnAudit:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -o-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: linear-gradient(to bottom, #3cb0fd, #ffd736);
+  text-decoration: none;
+}
+
+.dropbtnSelection:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -o-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: linear-gradient(to bottom, #3cb0fd, #ffd736);
+  text-decoration: none;
+}
+.dropbtnEnroll {
+     background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #000080);
+  background-image: -moz-linear-gradient(top, #3498db, #000080);
+  background-image: -ms-linear-gradient(top, #3498db, #000080);
+  background-image: -o-linear-gradient(top, #3498db, #000080);
+  background-image: linear-gradient(to bottom, #3498db, #000080);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 4px 8px 4px 8px;
+  border: solid #ffda7d 2px;
+  text-decoration: none;
+  bottom:30px;
+   
+    position:absolute;
+    bottom:20px;
+    left:370px;
+}
+.dropbtnEnroll:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: -o-linear-gradient(top, #3cb0fd, #ffd736);
+  background-image: linear-gradient(to bottom, #3cb0fd, #ffd736);
+  text-decoration: none;
+}
+.dropbtnAudit {
+    background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #000080);
+  background-image: -moz-linear-gradient(top, #3498db, #000080);
+  background-image: -ms-linear-gradient(top, #3498db, #000080);
+  background-image: -o-linear-gradient(top, #3498db, #000080);
+  background-image: linear-gradient(to bottom, #3498db, #000080);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 4px 16px 4px 16px;
+  border: solid #ffda7d 2px;
+  text-decoration: none;
+ 
+    position:absolute;
+    bottom:60px;
+    left:135px;
+}
+
+.dropbtnSelection {
+    background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #000080);
+  background-image: -moz-linear-gradient(top, #3498db, #000080);
+  background-image: -ms-linear-gradient(top, #3498db, #000080);
+  background-image: -o-linear-gradient(top, #3498db, #000080);
+  background-image: linear-gradient(to bottom, #3498db, #000080);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 16px;
+  padding: 2px 30px 2px 30px;
+  border: solid #ffda7d 2px;
+  text-decoration: none;
+
+   
+    position:absolute;
+    bottom:60px;
+    left:255px;
+}
+
+
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #2980B9;
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+}
+
+.dropdown-contentSearch {
+    display: none;
+    position: absolute;
+
+    background-image:url(searchTest.jpg);
+    background-repeat:no-repeat;
+
+    min-width: 506px;
+    min-height:537px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-contentPlan {
+    display: none;
+    position: absolute;
+   background-color: #00E5FF;
+    min-width: 600px;
+    min-height:600px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+
+.dropdown-contentEnroll {
+    display: none;
+    position: absolute;
+   background-color: #00E5FF;
+    min-width: 600px;
+    min-height:600px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-contentAudit {
+    display: none;
+    position: absolute;
+   background-color: #00E5FF;
+    min-width: 600px;
+    min-height:600px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-contentSelection {
+    display: none;
+    position: absolute;
+   background-color: #00E5FF;
+    min-width: 600px;
+    min-height:600px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+/*<div class="bottom-left">
+<button onclick="myFunction()" class="dropbtn">Search</button>
+  <div id="myDropdown" class="dropdown-content">
+    <a href="#home">Course Name</a>
+    <a href="#about">Requirements</a>
+    <a href="#contact">etc</a>
+    </div>
+
+
+<a href="https://www.google.com"><div class="bottom-left">Search</div></a>
+
+ <a href="https://www.google.com"> <div class="top-left">Degree Audit</div></a>
+ <a href="https://www.google.com">  <div class="top-right">Course Selection</div></a>
+  <a href="https://www.google.com">  <div class="bottom-right">Enroll</div></a>
+  <a href="https://www.google.com">  <div class="bottom-centered">Plan</div></a>
+  <a href="https://www.google.com">  <div class="centered"></div></a>
+
+    */
+
+
+.dropdown a:hover {background-color: #f1f1f1}
+
+.show {display:block;}
+</style>
+</head>
+<body>
+
+
+
+
+<div class="container">
+<img src="kittyPathTesting.jpg" alt="kittyPath" width="500" height="181">
+
+
+
+
+
+
+</div>
+
+<div class="dropdown">
+<button onclick="searchFunc()" class="dropbtnSearch">Search</button>
+  <div id="myDropdownSearch" class="dropdown-contentSearch">
+
+    <div class="header">
+    <div class="search_bar">
+        <input type="text" name="search" placeholder="Enter your search here">
+</div>
+
+  </div>
+</div>
+
+<div class="dropdown">
+<button onclick="planFunc()" class="dropbtnPlan">Plan</button>
+
+  <div id="myDropdownPlan" class="dropdown-contentPlan">
+    <a href="https://www.google.com">Sup</a><br>
+    <img src="na.jpg" alt="Na">
+    <a href="#about">More bullshit</a><br>
+    <a href="#contact">Here click this to plan your schedule mofo</a><br>
+  </div>
+</div>
+
+<div class="dropdown">
+<button onclick="enrollFunc()" class="dropbtnEnroll">Enroll</button>
+  <div id="myDropdownEnroll" class="dropdown-contentEnroll">
+    <a href="https://www.google.com">Sup</a><br>
+    <img src="na.jpg" alt="Na">
+    <a href="#about">More bullshit</a><br>
+    <a href="#contact">Here click this to plan your schedule mofo</a><br>
+  </div>
+</div>
+
+<div class="dropdown">
+<button onclick="auditFunc()" class="dropbtnAudit">Degree Audit</button>
+  <div id="myDropdownAudit" class="dropdown-contentAudit">
+    <a href="https://www.google.com">Sup</a><br>
+    <img src="na.jpg" alt="Na">
+    <a href="#about">More bullshit</a><br>
+    <a href="#contact">Here click this to plan your schedule mofo</a><br>
+  </div>
+</div>
+
+<div class="dropdown">
+<button onclick="selectionFunc()" class="dropbtnSelection">Course Selection</button>
+  <div id="myDropdownSelection" class="dropdown-contentSelection">
+    <a href="https://www.google.com">Sup</a><br>
+    <img src="na.jpg" alt="Na">
+    <a href="#about">More bullshit</a><br>
+    <a href="#contact">Here click this to plan your schedule mofo</a><br>
+  </div>
+</div>
+
+
+
+
+
+<script src="popup.js"></script>
+</body>
+</div>
+</html>

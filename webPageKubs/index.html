@@ -1,0 +1,288 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitty Page Assistant Website</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <script async defer type="text/javascript" src="index.js"></script>
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Materialize CSS">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="pageStyles.css" />
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body class="mdl-demo">
+    <nav class="color-primary">
+      <div class="nav-wrapper row">
+        <a href="#" class="col m12 l6 brand-logo">KittyPath Assistant</a>
+        <img src="./shieldboi.png" class="col hide-on-med-and-down l6" id="logoguy"></img>
+      </div>
+    </nav>  
+    <div class="container">
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="overview">
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="card">
+              <div class="row">
+                <!-- <img src="./background.jpg"></img> -->
+                <div class="col s4">
+                  <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                    <div id="playButton">
+                    <i class="material-icons create_new_folder">play_circle_filled</i>
+                    </div>
+                    <div hidden id="videoModal1" class="videoModal">
+                        <span class="videoModalClose">&times</span>
+                        <div class="gallery">
+                            <a target="_blank" href="gallery/kittyPathContainer.png">
+                              <img src="gallery/kittyPathContainer.png" alt="container" width="495" height="180">
+                            </a>
+                            <div class="desc">Main Menu</div>
+                          </div>
+                          
+                          <div class="gallery">
+                            <a target="_blank" href="courseSearch.png">
+                              <img src="gallery/courseSearch.png" alt="courseList" width="495" height="597">
+                            </a>
+                            <div class="desc">Search For Courses</div>
+                          </div>
+                          
+                          <div class="gallery">
+                            <a target="_blank" href="gallery/classSection.png">
+                              <img src="gallery/classSection.png" alt="Section Display" width="495" height="597">
+                            </a>
+                            <div class="desc">Pick A Section</div>
+                          </div>
+                          
+                          <div class="gallery">
+                            <a target="_blank" href="gallery/classSearchDisplay.png">
+                              <img src="gallery/classSearchDisplay.png" alt="Course Search Info" width="495" height="597">
+                            </a>
+                            <div class="desc">Search Results</div>
+                          </div>
+
+                          <div class="gallery">
+                              <a target="_blank" href="gallery/planDisplay.png">
+                                <img src="gallery/planDisplay.png" alt="Plan Display" width="495" height="597">
+                              </a>
+                              <div class="desc">Plan Classes</div>
+                            </div>
+
+                            <div class="gallery">
+                                <a target="_blank" href="gallery/recommendedDisplay.png">
+                                  <img src="gallery/recommendedDisplay.png" alt="Recommended" width="495" height="597">
+                                </a>
+                                <div class="desc">Recommended Courses</div>
+                              </div>
+
+                              <div class="gallery">
+                                  <a target="_blank" href="gallery/courseSave.png">
+                                    <img src="gallery/courseSave.png" alt="Course Save" width="495" height="597">
+                                  </a>
+                                  <div class="desc">Save Searched Courses</div>
+                                </div>
+
+                                <div class="gallery">
+                                    <a target="_blank" href="gallery/coourseSaveDisplay.png">
+                                      <img src="gallery/coourseSaveDisplay.png" alt="Course Save Display" width="495" height="597">
+                                    <div class="desc">View Saved Course Information</div>
+                                  </div>
+
+                        </div>
+                  </header>
+                </div>
+                <div class="col s8">
+                  <div class="card-content">                  
+                    <h4 class="card-title">Overview</h4>
+                    Simplify and automate the most complicated features of the dated LionPath system. Our extension is meant supplement the course scheduling system provided by LionPath.
+                  </div>
+                </div>              
+              </div>
+            </div>                
+          </section>
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <div class="row">
+              <div class="col">
+              <div class="card">
+                <div class="card-content">
+                  <h4 class="card-title">Details</h4>
+                  <div class="row">
+                    <div class="col s2 section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                      <div class="material-icons" style="margin: auto; text-align: center; font-size: 100px;">school</div>
+                    </div>
+                    <div class="col s10 section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                      <h5>View a summary of your degree audit</h5>
+                      KittyPath technology will read your LionPath degree audit once, and persist it, all while scanning for the requirements you need to graduate. View the most important parts of your audit without spending minutes scanning throught the long file itself. Built in GPA calculator functionality to predict and set your GPA goals.
+                    </div>                  
+                  </div>
+                  <div class="row">
+                    <div class="col s2 section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                      <div class="material-icons" style="margin: auto; text-align: center; font-size: 100px;">find_in_page</div>
+                    </div>
+                    <div class="col s10 section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                      <h5>Instantly search for available classes to schedule</h5>
+                      Search for courses based on the name, course code, or requirements that you need to satisfy. Save these courses to view them later and plan your schedule.
+                    </div>                    
+                  </div>
+                  <div class="row">
+                    <div class="col s2 section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                      <div class="material-icons" style="margin: auto; text-align: center; font-size: 100px;">dvr</div>
+                    </div>
+                    <div class="col s10 section__text mdl-cell mdl-cell--10-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                      <h5>View recommended academic plan</h5>
+                      Display the courses you should take based on major and semester. KittyPath will also tell you which courses are available for the chosen semester, as well as redirect you to save that course for later.
+                    </div>                  
+                  </div>
+                </div>
+              </div>                
+              </div>
+            </div>
+          </section>
+          <section class="section--center">
+            <div class="row">
+              <div class="col">
+                <div class="card">
+                  <div class="card-content">
+                    <h4 class="card-title">Technology</h4>
+                    <p>KittyPath is built using JavaScript/Jquery and CSS for the latest version of Chrome, utilizing Chrome Storage API's.
+                      Data was acquired using jQuery for user acquired data, and Python's BeautifulSoup4 for large data objects. All of our
+                      code is open source.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="section--footer mdl-color--white mdl-grid">
+            <div class="row">
+              <div class="col s12 m6 testimonials">
+                  <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                      <img class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone headshot" src="./josh.jpg"></img>
+                    </div>
+                <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Joshua Holden</h5>
+                  A true group leader and stallion coder. Assisted in class and degree audit data acquisition.
+                  <br>
+                  <a href="https://github.com/hitma1221">hitma1221@github</a>
+                </div>
+              </div>
+              <div class="col s12 m6 testimonials">
+                <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                  <img class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone headshot" src="./sexyboi.jpeg"></img>
+                </div>
+                <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                  <h5>Jakub Grzegorzewski</h5>
+                  Promising young engineer. Led the data scraping effort, integrated class searching and recommendation features.
+                  <br>
+                  <a href="https://github.com/jakewski">jakewski@github</a>
+                </div>                
+              </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m6 testimonials">
+                  <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                    <div class="section__circle-container__circle color-secondary section__circle--big"></div>
+                  </div>
+                  <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                    <h5>Neil Pasricha</h5>
+                    Determined. Ambitious. Exquisite taste. Led the design of the UX/UI and designed the course persistance feature.
+                    <br>
+                    <a href="https://github.com/neilpasricha">neilpasricha@github</a>
+                  </div>
+                </div>
+                <div class="col s12 m6 testimonials">
+                  <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                    <div class="section__circle-container__circle color-secondary section__circle--big"></div>
+                  </div>
+                  <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                    <h5>Abderazzak Asmaayni</h5>
+                    A developer who's work truly speaks for itself. Played the key role in degree audit features and assisted in acquiring the data required.
+                    <br>
+                    <a href="https://github.com/aasmaayn">aasmaayn@github</a>
+
+                  </div>                
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col s12 m6 testimonials">
+                    <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                      <img class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone headshot" src="./sexyguy.JPG"></img>
+                    </div>
+                    <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                      <h5>Joseph Hernandez</h5>
+                      Soldier in the field and behind the keyboard. Worked closely with Neil in designing the front end as well as shaping data to be displayed to the user in an aesthetic fashion.
+                      <br>
+                      <a href="https://github.com/Joe102192">Joe102192@github</a>
+                    </div>
+                  </div>
+                  <div class="col s12 m6 testimonials">
+                      <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+                          <img class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone headshot" src="./azzy.JPG"></img>
+                        </div>
+                    <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+                      <h5>Azalee McAlpine</h5>
+                      The face of KittyPath. Helped acquire essential data and gathered reviews from potential users which shaped the development lifecycle.
+                      <br>
+                      <a href="https://github.com/avm5687">avm5687@github</a>
+                    </div>                
+                  </div>
+                </div>
+          </section>
+        </div>
+      </main>
+    </div>
+    <footer class="page-footer">
+      <h1 style="text-align: center">Follow us!</h1>
+    </footer>
+  </body>
+</html>

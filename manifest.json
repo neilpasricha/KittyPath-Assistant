@@ -1,0 +1,36 @@
+{
+  "name": "KittyPath Assistant",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Capstone Project which helps users with LionPath.",
+  "homepage_url": "http://testing.com",
+  "icons": {
+    "16": "icons/16paw.png",
+    "48": "icons/48paw.png",
+    "128": "icons/128paw.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/128paw.png",
+    "default_popup": "popup.html"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "permissions": [
+    "contextMenus","tabs","storage","activeTab","<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.lionpath.psu.edu/psp/CSPRD/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.SSS_MY_ACAD.GBL*",
+        "https://www.lionpath.psu.edu/psp/CSPRD/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.SAA_SS_DPR_ADB.GBL*"
+      ],
+      "js": [
+        "js/jquery/jquery.min.js",
+        "src/inject/audit.js"
+      ]
+    }
+  ]
+}

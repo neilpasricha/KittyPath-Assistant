@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="\gui\styles.css" />
+    <link rel="stylesheet" type="text/css" href="\gui\animate.css" />
+    <script type="text/javascript" src="\js\jquery.min.js"></script>
+    <script type="text/javascript" src="\js\jquery-ui-1.12.1.custom\jquery-ui.min.js"></script>
+    <script async defer type="text/javascript" src="\js\reccommend.js"></script>
+    <script async defer type="text/javascript" src="\js\classSearchJS.js"></script>
+    <script async defer type="text/javascript" src="\js\courseSelection.js"></script>
+    <script async defer type="text/javascript" src="\js\popup.js"></script>
+    <script async defer type="text/javascript" src="\js\plan.js"></script>
+    <script async defer type="text/javascript" src="\js\degreeAuditHandler.js"></script>
+    <script async defer type="text/javascript" src="\js\gpaCalc.js"></script>
+    <script async defer type="text/javascript" src="\js\injectSaved.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <div id="kittyContainer" class="container">
+
+        <img id="containerBG" src="\gui\kittyContainerBackground.png" alt="kittyPath" width="500" height="181">
+        <img id="lionPaw" class="pawLogo" src="\gui\lionPawSmall.png" alt="lionPaw">
+        
+        <select id="semester" class="kitty-button">
+            <option  style="display:none" selected>Semester</option>
+            <option>Spring 2018</option>
+            <option id="PSU">Fall 2018</option>
+        </select>
+    </div>
+
+    <div class="dropdown">
+            
+        
+
+        <button id="searchButton" class="kitty-button">Search</button>
+        
+        <div id="myDropdownSearch" class="dropdown-contentSearch">
+
+            <ul id="SearchTabs" class="searchTab">
+                <button id="CourseReq" class="tablink">
+                    <font id="sbR" color="white">Search by Requirement</font>
+                </button>
+                <button id="CourseID" class="tablink">
+                    <font id="sbc" color="white">Search by Course ID/Course Number</font>
+                </button>
+                <br>
+            </ul>
+
+
+            <div id="ClassById" class="SearchTabContent">
+                <h2 id="SearchLabel" autocomplete="off" style="color:white;">Course Search:</h2>
+                <form>
+                    <input id="search-input" type="search" class="class_search" autocomplete="off" placeholder="Enter Class Name or Class Course Code..."> </input>
+                </form>
+                <div hidden id="class_loader" class="loader"></div>
+                <button hidden id="goBack" class="class_search">&#8617</button>
+                <button hidden id="clearSearch" class="class_search" position: "fixed">New Search</button>
+                <select hidden size="10" id="options" class="chosen"></select>
+                <table hidden id="title" background="\gui\greyBG.png" style="width:450px;margin-top:70px">
+                    <tr id="course" style="color:rgb(85, 241, 252); font-size:17px; margin-bottom: 0px">
+                        <b></b>
+                    </tr>
+                </table>
+
+                <table hidden id="tab" background="\gui\greyBG.png" class="tableGuy" rules=rows>
+                    <tr>
+                        <td style="color:white; font-size:16px">
+                            <b>Number</b>
+                        </td>
+                        <td id="number" style="color:white; font-size:16px"></td>
+
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:14px">
+                            <b>Section</b>
+                        </td>
+                        <td id="section" style="color:white; font-size:16px"></td>
+
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:16px">
+                            <b>Times</b>
+                        </td>
+                        <td id="times" style="color:white; font-size:16px"></td>
+
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:16px">
+                            <b>Room</b>
+                        </td>
+                        <td id="room" style="color:white; font-size:16px"></td>
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:16px">
+                            <b>Instructor</b>
+                        </td>
+                        <td id="instructor" style="color:white; font-size:16px"></td>
+
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:16px">
+                            <b>Date</b>
+                        </td>
+                        <td id="dates" style="color:white; font-size:16px"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td style="color:white;font-size:16px">
+                            <b>Pre-requesites</b>
+                        </td>
+                        <td id="prerequesites" style="color:white; font-size:16px"></td>
+                    </tr>
+
+                    <tr>
+                        <td style="color:bisque;font-size:16px">
+                            <b></b>
+                        </td>
+                        <td class="infos">
+                            <a id="details" style="color:rgb(141, 243, 155); font-size: 16px" href="" target="_blank">Click to read more details...</a>
+                        </td>
+                    </tr>
+
+                </table>
+                <button hidden id="saveClassbtn" class="class_search">Save Course</button>
+            </div>
+
+            <div id="ClassByReq" class="SearchTabContent">
+                <h2 id="AttributeHeader">
+                    <font id="reqAt" color="white" size="3px;">Attribute: </font>
+                </h2>
+                <!--<h2 id="CourseSubjectHeader">
+                    <font color="white" size="3px;">Area of Study: </font>
+                </h2>
+                <div id="AreaStudy" class="dropselectCampusDropDown">
+                    <select id="CourseSubject">
+                        <option value="Math">Math</option>
+                        <option value="CMPSC">CMPSC: Computer Science</option>
+                        <option value="BIO">Biology</option>
+                    </select>
+                </div>-->
+                <button id="AttributeSubmitButton" class="kitty-button">
+                    <font id="atrSub" size="3px;">Submit</font>
+                </button>
+                <div id="GeneralRequirements" class="dropselectCampusDropDown">
+                    <select id="GenedSelect">
+                        <option value="GA">Arts(GA)</option>
+                        <option value="GH">Humanities(GH)</option>
+                        <option value="IL">International Languages(IL)</option>
+                        <option value="GN">Natural Sciences(GN)</option>
+                        <option value="GS">Social Sciences(GS)</option>
+                        <option value="GWS">Writing/Speaking(GWS)</option>
+                    </select>
+                </div>
+
+
+                <div hidden id="GenEdCourses">
+                    <select size="10" id="GenCourses">
+                        <option value="tempClass">Put courses here</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button id="planButton" class="kitty-button">Plan</button>
+        <div id="myDropdownPlan" class="dropdown-contentPlan" >
+            <h2 id="SearchLabel2" autocomplete="off" style="color:white; margin-left:10px">Please select a campus:</h2>
+            <h3 id="SemesterSelectLabel" class="SemesterLabel" style="color: white; margin-left: 250px">Please select a semester to view:</h3>
+            <h3 id="MajorSelectLabel" class="majorLabel" style="color: white; margin-left: 10px;">Please select a major</h3>
+
+            <div id="campuses" class="dropselectCampusDropDown">
+                <select id="campusSelect">
+                    <!--<option value="Abington">Abington</option>
+                    <option value="Altoona">Altoona</option>
+                    <option value="Beaver">Beaver</option>
+                    <option value="Behrend">Behrend</option>
+                    <option value="Berks">Berks</option>
+                    <option value="Brandywine">Brandywine</option>
+                    <option value="DuBois">DuBois</option>
+                    <option value="Fayette">Fayette</option>
+                    <option value="Allegheny">Allegheny</option>-->
+                    <option value="Harrisburg" selected="selected">Harrisburg</option>
+                    <!--<option value="Hazleton">Hazleton</option>
+                    <option value="Lehigh Valley">Lehigh Valley</option>
+                    <option value="Mont Alto">Mont Alto</option>
+                    <option value="New Kensington">New Kensington</option>
+                    <option value="Schuylkill">Schuylkill</option>
+                    <option value="Shenango">Shenango</option>
+                    <option value="Worthington Scranton">University Park</option>
+                    <option value="Wilkes-Barre">Wilkes-Barre</option>
+                    <option value="Worthington Scranton">Worthington Scranton</option>
+                    <option value="York">York</option>-->
+                </select>
+            </div>
+            <div id="SemeseterSelection" class="dropselectSemester">
+                <select id="SemesterSelect">
+                    <option value="1" selected="selected">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                    <option value="5">Semester 5</option>
+                    <option value="6">Semester 6</option>
+                    <option value="7">Semester 7</option>
+                    <option value="8">Semester 8</option>
+                </select>
+            </div>
+
+            <div id="MajorSelection" class="dropMajorSelect">
+                <select id="MajorSelect" style="width: 450px !important;">
+
+                </select>
+            </div>
+
+            <button id="NeededClassesSubmitButton" class="kitty-button">
+                <font size="3px;">Submit</font>
+            </button>
+            
+            <div id="Required" class="reqClassesContent">
+              
+                
+                    <p  id="MajorName"  style="color:cyan"></p>
+                    <p id="CampusName" style="color:cyan"></p>
+                    <div hidden id="class_loader2">
+                            
+                            <p style="color:rgb(220, 233, 233); font-size:16px ;text-align: center"> Please wait ...</p>
+                            <p  class="loader" ></p>
+                    </div>
+                    
+
+           
+
+
+                    
+                                   
+               
+                    <table id="planTable" class="tableGuy" rules=rows>
+                        <tr>
+                            <TH class="ReqClassHeadElement" style="width:80%">
+                             <font color="white" size="4px"></font>
+                            </TH>
+                            <TH class="ReqClassHeadElement" style="width:20%">
+                                <font color="white" size="4px"></font>
+                            </TH>
+                        </tr>
+
+                    </table>
+
+               
+                
+            
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="dropdown">
+        <button id="helpButton" class="kitty-button ">Tutorial</button>
+        <div id="myDropdownHelp" class="dropdown-contentHelp">
+
+            <h3 id="HelpHeader1" class="HelpHeader">Getting Started</h3>
+            <P id="HelpText" class="HelpText">
+                In order to use this extentsion, you must logon to Lionpath and navigate to the degree
+                <br> audit. Once you have arrived at your degree audit, open the extension, and click the
+                <br> Degree Audit Button. If you are having trouble accessing your degree audit, follow
+                <br> this
+                <a href="https://handbook.psu.edu/content/degree-audit" style="color: rgb(0,255,255)" target="_blank">Link</a> for instructions.
+                <br>
+                <br> Clicking on the Degree Audit Button in KittyPath Assistant will allow you to view your
+                <br> GPA, unfufilled requirements, your current classes, and classes not being used to fufill
+                <br> your degree.
+                <br>
+            </P>
+            <h3 id="HelpHeader2" class="HelpHeader">Search</h3>
+            <P id="HelpText" class="HelpText">
+                Searching for classes is easy in KittyPath. You can search for classes based on the
+                <br> requirement it satisfies or by the course ID. Simply, click the search tab and select how
+                <br> you would like to search. Once you have found the course, you can save it to your
+                <br> Course selction by pressing save.
+                <br>
+            </P>
+            <h3 id="HelpHeader3" class="HelpHeader">Plan</h3>
+            <P id="HelpText" class="HelpText">
+                To view an academic plan, choose your current campus and then select if you are a
+                <br> two plus two student.
+            </P>
+            <h4 id="ContactUsHeader" class="ContactUsHeader">Contact Us</h4>
+            <P id="ContactText" class="ContactText">
+                Email:
+                <a href=h ttps://mail.google.com/mail/?view=cm&fs=1&to=kittypathassistant@gmail.com&su=Kitty_Path_Assistant_Help style="color: rgb(0,255,255)"
+                    target="_blank">kittypathassistant@gmail.com</a>
+                <br>
+                <br> GitHub:
+                <a href=h ttps://github.com/jakewski/csbot.git style="color: rgb(0,255,255)" target="_blank">https://github.com</a>
+            </P>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button id="auditButton" class="kitty-button">Degree Audit</button>
+        <div id="myDropdownAudit" class="dropdown-contentAudit">
+            <table id="GPABox" class="gpabox">
+                <tr>
+                    <th>
+                        <font id="gpaPlain" color="white" size="4px">GPA: </font>
+                    </th>
+                    <td id="GPAContent">
+                        <font id="gpaCont" color="white" size="4px"></font>
+                    </td>
+                </tr>
+            </table>
+
+            <div id="container" class="schedule_Date">
+            <p id="regTitle" class="schedule_Date">Registration Date: </p>
+            <p id="scheduleDate" class="schedule_Date">01/08/2018</p>
+            </div>
+            
+            <ul id="AuditTab" class="auditTab">
+                <button id="UnfulfilledReqs" class="tablink1">
+                    <font id="unFulTit" color="white">Unfulfilled Requirements</font>
+                </button>
+                <button id="CurrentClasses" class="tablink1">
+                    <font id="curClassTit" color="white">Current Classes</font>
+                </button>
+                <button id="NotUsed" class="tablink1">
+                    <font id="compNU" color="white">Completed but not used</font>
+                </button>
+                <button id="GPACalculator" class="tablink1">Gpa Calculator
+                </button>
+                <br>
+            </ul>
+
+
+            <div id="unfulfilledContent" class="unfulfilledClass">
+                <h2 id="blah" style="color:aliceblue; font-size:14px">UNFULFILLED REQUIREMENTS::</h2>
+                <nav>
+                    <ul class="list" id="unfulfilledlist" style="list-style-type:disc" style="border-radius: 5px; margin-top: 30px;"> </ul>
+                </nav>
+
+            </div>
+<!--- gpa calculator html is herrreee-/-->
+    <div id="gpaModalT" class="modal">
+        <span id= "gpaModalClose" class="gpaClose">&times;</span>
+        <div id = "gpaModalContent">
+        <p id="gpaMod1" style="color:aliceblue; font-size:14px"> Please select the grade and number of credits of the course :</p>
+        
+            <select id = "grades">
+                <option value= "1.33" >F</option>
+                <option value= "1.67">D</option>
+                <option value= "2">C</option>
+                <option value= "2.33">C+</option>
+                <option value= "2.27" selected="selected">B-</option>
+                <option value= "3">B</option>
+                <option value= "3.33">B+</option>
+                <option value= "3.67">A-</option>
+                <option value= "4" >A</option>
+            </select>
+        
+
+        
+            <select id = "ncredits">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3" selected="selected">3</option>
+                <option value="4">4</option>
+
+            </select>
+
+            <button id ="addc" class="kitty-button"> Add course </button>
+            <button id ="starto" class="kitty-button"> Start Over </button>
+       
+
+        <table id ="calculatorShit" class="tableGuy">
+            <tr>
+                <TH style="width:20%"></TH>
+                <TH style="width:40%"></TH>
+                <TH style="width:40%"></TH>
+            </tr>
+
+        </table>
+        <p id = "gpa" style="color:aliceblue; font-size:18px"></p>
+        </div>
+    </div>
+
+
+
+
+
+<!--   -/-->
+
+
+        </div>
+
+        <div class="dropdown">
+            <button id="selectionButton" class="kitty-button">Course Selection</button>
+            <div id="myDropdownSelection" class="dropdown-contentSelection">
+                <div id="CSTabs" class="CSTab">
+                    <button id="savedCS">
+                        <font id="saveCo" color="white">Saved Courses</font>
+                    </button>
+                    <button id="reccCS">
+                        <font id="recCo" color="white">Recommended Courses</font>
+                    </button>
+                    <br>
+                </div>
+                <div hidden id="SavedClasses" class="savedCourses" style="margin-top:50px">
+                    <table id="justTitles" background="\gui\greyBG.png" width="500px">
+                        <tr>
+                            <th id="SCtitle" class="savedCourses">SAVED COURSES</th>
+
+                        </tr>
+                    </table>
+                    <table id="courseTable" class="savedCourses" rules=rows>
+
+                        <button hidden id="cs0Exit" class="savedCourseClear">&times</button>
+                        <button hidden id="cs0Modal" class="csModalButtons">Click to View Details</button>
+
+                        <button hidden id="cs1Exit" class="savedCourseClear">&times</button>
+                        <button hidden id="cs1Modal" class="csModalButtons">Click to View Details</button>
+
+                        <button hidden id="cs2Exit" class="savedCourseClear">&times</button>
+                        <button hidden id="cs2Modal" class="csModalButtons">Click to View Details</button>
+
+                        <button hidden id="cs3Exit" class="savedCourseClear">&times</button>
+                        <button hidden id="cs3Modal" class="csModalButtons">Click to View Details</button>
+
+                        <button hidden id="cs4Exit" class="savedCourseClear">&times</button>
+                        <button hidden id="cs4Modal" class="csModalButtons">Click to View Details</button>
+
+                        <button hidden id="cs5Exit" class="savedCourseClear">&times</button>
+                        <button hidden id="cs5Modal" class="csModalButtons">Click to View Details</button>
+
+                        <button hidden id="cs6Exit" class="savedCourseClear">&times</button>
+                        <button hidden id="cs6Modal" class="csModalButtons">Click to View Details</button>
+                    </table>
+                    <button id="injectSaved" class="kitty-button">Add to Schedule Builder</button>
+
+                </div>
+
+                <div hidden id="reccomendedClasses" class="savedCourses" style="margin-top:50px">
+                    <h4 id="semSel" style="font-size: 14px;">Please select your semester for</h4>
+                    <div id="SemeseterSelection1" class="dropselectSemester">
+                        <select id="SemesterSelect2">
+                            <option value="0">Semester 1</option>
+                            <option value="1">Semester 2</option>
+                            <option value="2">Semester 3</option>
+                            <option value="3">Semester 4</option>
+                            <option value="4">Semester 5</option>
+                            <option value="5">Semester 6</option>
+                            <option value="6">Semester 7</option>
+                            <option value="7">Semester 8</option>
+                        </select>
+                    </div>
+                    <h4 id="majSel"style="font-size: 14px;">Please select your major</h4>
+                    <div id="majorDiv" class="dropselectSemester">
+                        <select id="MajorSelect2" class="dropselectMajor2"></select>            
+                    </div>        
+                <div id="recboys">
+                    <table id = "recTable" class="tableGuy" rules=rows>
+                        <thead>               
+                            <th class="recentry">Requirement</th>
+                            <th class="recentrycredhead">Credits</th>
+                        </thead>
+                        <tbody id="courseboys">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <!-- <nav>
+                    <ul class="list" id="reccomandedCourses" style="list-style-type:disc" style="border-radius: 5px; margin-top: 50px;"> </ul>
+                </nav> -->
+
+                </div>
+
+                <div hidden id="csModal" class="csModals">
+                    <span class="csModalClose">&times</span>
+                    <!--Modal Content goes here-->
+                    <table id="titleCS" background="\gui\darkGreyBG.png" style="width:450px;margin-top:269px;margin-left:20px">
+                        <tr id="courseCS" style="color:rgb(85, 241, 252); font-size:17px; margin-bottom: 0px">
+                            <b></b>
+                        </tr>
+                    </table>
+
+                    <table id="tabCS" background="\gui\darkGreyBG.png" class="CStableGuy" rules=rows>
+                        <tr>
+                            <td style="color:white; font-size:16px">
+                                <b>Number</b>
+                            </td>
+                            <td id="numberCS" style="color:white; font-size:16px"></td>
+
+                        </tr>
+                        <tr>
+                            <td style="color:white; font-size:14px">
+                                <b>Section</b>
+                            </td>
+                            <td id="sectionCS" style="color:white; font-size:16px"></td>
+
+                        </tr>
+                        <tr>
+                            <td style="color:white; font-size:16px">
+                                <b>Times</b>
+                            </td>
+                            <td id="timesCS" style="color:white; font-size:16px"></td>
+
+                        </tr>
+                        <tr>
+                            <td style="color:white; font-size:16px">
+                                <b>Room</b>
+                            </td>
+                            <td id="roomCS" style="color:white; font-size:16px"></td>
+                        </tr>
+                        <tr>
+                            <td style="color:white; font-size:16px">
+                                <b>Instructor</b>
+                            </td>
+                            <td id="instructorCS" style="color:white; font-size:16px"></td>
+
+                        </tr>
+                        <tr>
+                            <td style="color:white; font-size:16px">
+                                <b>Date</b>
+                            </td>
+                            <td id="datesCS" style="color:white; font-size:16px"></td>
+
+                        </tr>
+
+                        <tr>
+
+                     <!--       <td style="color:white;font-size:16px">
+                                <b>Pre-requesites</b>
+                            </td>
+                            <td id="prerequesitesCS" style="color:white; font-size:16px"></td>
+                        </tr> -->
+
+
+                    </table>
+                </div>
+            </div>
+
+</body>
+
+</html>

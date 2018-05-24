@@ -1,0 +1,33 @@
+{
+  "name": "kittyPathAssistant",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Capstone Project which helps users with LionPath.",
+  "homepage_url": "http://mang.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+  "default_locale": "en",
+  "background": {
+    "page": "src/bg/background.html",
+    "persistent": true
+  },
+  "permissions": [
+    "contextMenus"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.lionpath.edu/*"
+      ],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+    <link rel="stylesheet" type="text/css" href="\UI Stuff\styles.css" />
+
+    <script type="text/javascript" src="\js\jquery.min.js"></script>
+    <script type="text/javascript" src="\js\classesSpring.js"></script>
+    <script async defer type="text/javascript" src="\js\classSearchJS.js"></script>
+    <script async defer type="text/javascript" src="\js\popup.js"></script>
+
+
+
+</head>
+
+<body>
+    <div>
+        <h2 id="SearchLabel" autocomplete="off" style="color:white; margin-left: 3%">Course Search:</h2>
+        <form>
+
+            <input id="search-input"  type="search" class="class_search" style="width:275px;height:30px;"; autocomplete="off" placeholder="Enter class name or course code..."> </input>
+           
+
+
+        </form>
+
+
+
+    </div>
+    <button hidden id="goBack" class="class_search"><</button>
+    <button hidden id="clearSearch" class="class_search">New Search</button> <!--New Search Button-->
+
+    <select hidden size="10" id="options" class="chosen" ;"> 
+
+    </select>
+
+
+    <table hidden id="title" background="\UI Stuff\greyBG.png" style="width:481px;margin-top:50px">
+        <tr id="course" style="color:rgb(85, 241, 252); font-size:20px; margin-bottom: 0px"><b></b></tr>
+    </table>
+
+
+    <table hidden id="tab" background="\UI Stuff\greyBG.png" style="width:481px">
+        <tr>
+            <td style="color:white; font-size:18px"><b>Number</b></td>
+            <td id="number" style="color:white; font-size:18px"></td>
+
+        </tr>
+        <tr>
+            <td style="color:white; font-size:18px"><b>Section</b></td>
+            <td id="section" style="color:white; font-size:18px"></td>
+
+        </tr>
+        <tr>
+            <td style="color:white; font-size:18px"><b>Times</b></td>
+            <td id="times" style="color:white; font-size:18px"></td>
+
+        </tr>
+        <tr>
+            <td style="color:white; font-size:18px"><b>Room</b></td>
+            <td id="room" style="color:white; font-size:18px"></td>
+        </tr>
+        <tr>
+            <td style="color:white; font-size:18px"><b>Instructor</b></td>
+            <td id="instructor" style="color:white; font-size:18px"></td>
+
+        </tr>
+        <tr>
+            <td style="color:white; font-size:18px"><b>Date</b></td>
+            <td id="dates" style="color:white; font-size:18px"></td>
+
+        </tr>
+    </table>
+    <button hidden id=saveClassSelection class="savedCourseButton">Save Course</button>
+</body>

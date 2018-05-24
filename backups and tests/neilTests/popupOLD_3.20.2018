@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+ 
+    <title>Document</title>
+    
+    <link rel="stylesheet" type="text/css" href="\gui\styles.css" />
+    <link rel="stylesheet" type="text/css" href="\gui\animate.css" />
+    <script async defer type="text/javascript" src="\js\jquery.min.js"></script>
+    <script async defer type="text/javascript" src="\js\classSearchJS.js"></script>
+    <script async defer type="text/javascript" src="\js\popup.js"></script>
+    <script async defer type="text/javascript" src="\js\plan.js"></script>
+    <script async defer type="text/javascript" src="\js\degreeAuditHandler.js"></script>
+
+  
+     
+    
+
+    
+
+
+</head>
+
+<body>
+
+    <div id="kittyContainer" class="container">
+
+        <img src="\gui\kittyLogoTest.png" alt="kittyPath" width="500" height="181">
+    </div>
+
+    <div class="dropdown">
+        <button id="searchButton" class="kitty-button">Search</button>
+        <div id="myDropdownSearch" class="dropdown-contentSearch">
+            
+            <ul id="SearchTabs" class = "searchTab">
+                <button id="CourseReq" class="tablink" ><font color = "white">Search by Requirement</font></button>
+                <button id="CourseID" class="tablink" ><font color = "white">Search by Course ID/Course Number</font></button>
+                <br>
+            </ul>
+            
+    
+            <div id="ClassById" class="SearchTabContent">
+                <h2 id="SearchLabel" autocomplete="on" style="color:white;">Course Search:</h2>
+                <form>
+                    <input id="search-input" type="search" class="class_search" style="width:275px;height:30px;margin-top: 10px;" autocomplete="off" placeholder="Enter Class Name or Class Course Code...."> </input>
+                </form>
+                
+                <button hidden id="clearSearch" class="class_search" position: "fixed">New Search</button>
+                <select hidden size="10" id="options" class="chosen" style="border-radius: 5px; margin-top: 30px;"></select>
+                <table hidden id="title" background="\gui\greyBG.png" style="width:500px;margin-top:70px">
+                    <tr id="course" style="color:rgb(85, 241, 252); font-size:20px; margin-bottom: 0px">
+                        <b></b>
+                    </tr>
+                </table>
+
+                <table hidden id="tab" background="\gui\greyBG.png" style="width:500px;overflow-y: scroll;" border=1 frame=void rules=rows>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Number</b>
+                        </td>
+                        <td id="number" style="color:white; font-size:18px"></td>
+
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Section</b>
+                        </td>
+                        <td id="section" style="color:white; font-size:18px"></td>
+
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Times</b>
+                        </td>
+                        <td id="times" style="color:white; font-size:18px"></td>
+
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Room</b>
+                        </td>
+                        <td id="room" style="color:white; font-size:18px"></td>
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Instructor</b>
+                        </td>
+                        <td id="instructor" style="color:white; font-size:18px"></td>
+
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Date</b>
+                        </td>
+                        <td id="dates" style="color:white; font-size:18px"></td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td style="color:bisque;font-size:18px">
+                            <b>Pre-requesites</b>
+                        </td>
+                        <td id="prerequesites" style="color:white; font-size:18px"></td>                       
+                    </tr>
+
+                    <tr>
+                        <td style="color:bisque;font-size:18px">
+                            <b></b>
+                        </td>
+                        <td class="infos">
+                            <a id="details" style="color:rgb(141, 243, 155); font-size: 18px" href="#" target="_blank">Click to read more details...</a>
+                        </td>
+                    </tr>
+
+                </table>
+                <button hidden id="saveClassbtn" class="class_search">Save Course</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button id="planButton" class="kitty-button">Plan</button>
+        <div id="myDropdownPlan" class="dropdown-contentPlan">
+        <h2 id="SearchLabel" autocomplete="off" style="color:white; margin-left:10px">Please select a campus:</h2>
+        <h3 id="SemesterSelectLabel" class="SemesterLabel" style="color: white; margin-left: 250px">Please select a semester to view:</h3>
+        <h3 id="MajorSelectLabel" class="majorLabel" style="color: white; margin-left: 10px;">Please select a major</h3>
+        
+        <div id ="campuses" class="dropselectCampusDropDown">
+            <select id ="campusSelect">
+                <option value="Abington">Abington</option>
+                <option value="Altoona">Altoona</option>
+                <option value="Beaver">Beaver</option>
+                <option value="Behrend">Behrend</option>
+                <option value="Berks">Berks</option>
+                <option value="Brandywine">Brandywine</option>
+                <option value="DuBois">DuBois</option>
+                <option value="Fayette">Fayette</option>
+                <option value="Allegheny">Allegheny</option>
+                <option value="Harrisburg" selected="selected">Harrisburg</option>
+                <option value="Hazleton">Hazleton</option>
+                <option value="Lehigh Valley">Lehigh Valley</option>
+                <option value="Mont Alto">Mont Alto</option>
+                <option value="New Kensington">New Kensington</option>
+                <option value="Schuylkill">Schuylkill</option>
+                <option value="Shenango">Shenango</option>
+                <option value="Wilkes-Barre">Wilkes-Barre</option>
+                <option value="Worthington Scranton">Worthington Scranton</option>
+                <option value="York">York</option>
+              </select>
+          </div>
+          <div id="SemeseterSelection" class="dropselectSemester">
+              <select id="SemesterSelect">
+                <option value="1" selected="selected">Semester 1</option>
+                <option value="2">Semester 2</option>
+                <option value="3">Semester 3</option>
+                <option value="4">Semester 4</option>
+                <option value="5">Semester 5</option>
+                <option value="6">Semester 6</option>
+                <option value="7">Semester 7</option>
+                <option value="8">Semester 8</option>
+              </select>
+          </div>
+
+          <div id="MajorSelection" class="dropMajorSelect">
+              <select id="MajorSelect" style="width: 450px !important;">
+                  
+              </select>
+          </div>
+         <!--  <h2 id="enterMajor" style="color:white; margin-left:10px">Please select your major:</h2>
+          <div id = "majorMenu" class="dropSelectMajorDropDown">
+              <select id = "majorSelect">
+              </select>-->
+          <h2 id="twoPlustwo" autocomplete="off" style="color:white; margin-left:10px; margin-top:60px">Are you a 2 + 2 student?</h2>    
+          <div id=twoButtontwo>
+          <form action =" " id = "twoButton" class="twoButtonClass">
+            <input id="n1" style="margin-left:15px;"type="radio" name="twoPlustwo" value="No" checked> <font color ="white"> No </font></input>
+            <input id="y1"type="radio" name="twoPlustwo" value="Yes" style="margin-left:5px"><font color ="white">  Yes</font></input>
+          </form></div>
+            
+            <ul id="RecommendClassTabs" class = "reqClasses">
+                <button id="NeededClasses" class="tablink2"><font color = "white">Required Courses</font></button>
+                <button id="GenEds" class="tablink2"><font color="white">General Education Requirements</font></button>
+            </ul>
+
+            <div id="Required" class="reqClassesContent" style="overflow-y: scroll; height:400px;">
+                <table id ="justTitles" background="\gui\greyBG.png" width="450" >
+                    <tr>
+                        <TH class="ReqClassHeadElement" style="width:70%"><font color="cyan" size="4px">Course Title</font></TH>
+                        <TH class="ReqClassHeadElement" style="width:30%"><font color="cyan" size="4px">No. Credits</font></TH>
+                    </tr>
+        
+                        </table>
+                <table id ="planTbale" background="\gui\greyBG.png" style="width:480px;color:white" border=1 frame=void rules=rows 
+                    <tr>
+                            <TH class="ReqClassHeadElement" style="width:65%"><font color="white" size="4px"></font></TH>
+                            <TH class="ReqClassHeadElement" style="width:35%"><font color="white" size="4px"></font></TH>
+                            
+                                
+                                    
+                                
+                            
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="dropdown">
+        <button id="helpButton" class="kitty-button ">Help</button>
+        <div id="myDropdownHelp" class="dropdown-contentHelp">
+             
+                <h3 id="HelpHeader" class="HelpHeader">Getting Started</h3>
+                <P id="HelpText" class="HelpText">
+                    In order to use this extentsion, you must logon to Lionpath and navigate to the degree <br> audit. Once you have arrived at your degree audit, open the extension, and click the <br> Degree Audit Button.
+                    If you are having trouble accessing your degree audit, follow <br> this <a href="https://handbook.psu.edu/content/degree-audit" style="color: rgb(0,255,255)" target="_blank">Link</a> for instructions. <br> <br>
+                    Clicking on the Degree Audit Button in KittyPath Assistant will allow you to view your <br> GPA, unfufilled requirements, your current classes, and classes not being used to fufill <br> your degree. <br>
+                </P>
+                <h3 id="HelpHeader" class="HelpHeader">Search</h3>
+                <P id="HelpText" class="HelpText">
+                     Searching for classes is easy in KittyPath. You can search for classes based on the <br> requirement it satisfies or by the course ID. Simply, click the search tab and select how <br> you would like to search. Once you have found the course, you can save it to your <br> Course selction by pressing save. <br>
+                </P>
+                <h3 id="HelpHeader" class="HelpHeader">Plan</h3>
+                <P id="HelpText" class="HelpText">
+                     To view an academic plan, choose your current campus and then select if you are a <br> two plus two student.
+                </P>
+                <h4 id="ContactUsHeader" class="ContactUsHeader">Contact Us</h4>
+                <P id="ContactText" class="ContactText">
+                    Email: <a href= https://mail.google.com/mail/?view=cm&fs=1&to=kittypathassistant@gmail.com&su=Kitty_Path_Assistant_Help style="color: rgb(0,255,255)" target="_blank">kittypathassistant@gmail.com</a>
+                    <br> <br>
+                    GitHub: <a href = https://github.com/jakewski/csbot.git style="color: rgb(0,255,255)" target="_blank">https://github.com</a>
+                </P>
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <button id="auditButton" class="kitty-button">Degree Audit</button>
+        <div id="myDropdownAudit" class="dropdown-contentAudit">
+            <table id="GPABox" class="gpabox">
+                <tr>
+                    <th><font color="white" size="4px">GPA: </font></th>
+                    <td id="GPAContent"><font color="white" size="4px"></font></td>
+                </tr>
+            </table>
+            <ul id="AuditTab" class="auditTab">
+                <button id="UnfulfilledReqs" class="tablink1"><font color="white">Unfulfilled Requirements</font></button>
+                <button id="CurrentClasses" class="tablink1"><font color="white">Current Classes</font></button>
+                <button id="NotUsed" class="tablink1"><font color="white">Completed but not used</font></button>
+                <br>
+            </ul>
+
+
+            <div id="unfulfilledContent" class="unfulfilledClass">
+                <h2 id="blah" style="color:aliceblue; font-size:14px">UNFULFILLED REQUIREMENTS::</h2>
+                <nav>
+                    <ul class="list" id="unfulfilledlist"style="list-style-type:disc" style="border-radius: 5px; margin-top: 30px;"> </ul> 
+                </nav>       
+
+        </div>
+      </div>
+
+    <div class="dropdown">
+        <button id="selectionButton" class="kitty-button">Course Selection</button>
+        <div id="myDropdownSelection" class="dropdown-contentSelection" style="overflow-y: scroll">
+            <div hidden id="table1" class="savedCourses" style="overflow-y: scroll">
+            <table  id="titleCS1" background="\gui\greyBG.png" style="width:500px;margin-top:70px">
+                <tr id="courseCS1" style="color:rgb(85, 241, 252); font-size:20px; margin-bottom: 0px">
+                    <b></b>
+                </tr>
+            </table>
+
+            <table  id="tabCS1" background="\gui\greyBG.png" style="width:500px" border=1 frame=void rules=rows>
+                <tr>
+                    <td style="color:white; font-size:18px">
+                        <b>Number</b>
+                    </td>
+                    <td id="numberCS1" style="color:white; font-size:18px"></td>
+
+                </tr>
+                <tr>
+                    <td style="color:white; font-size:18px">
+                        <b>Section</b>
+                    </td>
+                    <td id="sectionCS1" style="color:white; font-size:18px"></td>
+
+                </tr>
+                <tr>
+                    <td style="color:white; font-size:18px">
+                        <b>Times</b>
+                    </td>
+                    <td id="timesCS1" style="color:white; font-size:18px"></td>
+
+                </tr>
+                <tr>
+                    <td style="color:white; font-size:18px">
+                        <b>Room</b>
+                    </td>
+                    <td id="roomCS1" style="color:white; font-size:18px"></td>
+                </tr>
+                <tr>
+                    <td style="color:white; font-size:18px">
+                        <b>Instructor</b>
+                    </td>
+                    <td id="instructorCS1" style="color:white; font-size:18px"></td>
+
+                </tr>
+                <tr>
+                    <td style="color:white; font-size:18px">
+                        <b>Date</b>
+                    </td>
+                    <td id="datesCS1" style="color:white; font-size:18px"></td>
+
+                </tr>
+
+                <tr>
+
+                    <td style="color:bisque;font-size:18px">
+                        <b>Pre-requesites</b>
+                    </td>
+                    <td id="prerequesitesCS1" style="color:white; font-size:18px"></td>                       
+                </tr>
+
+                <tr>
+                    <td style="color:bisque;font-size:18px">
+                        <b></b>
+                    </td>
+                    <td class="infos">
+                        <a id="detailsCS1" style="color:rgb(141, 243, 155); font-size: 18px" href="#" target="_blank" git>Click to read more details...</a>
+                    </td>
+                </tr>
+
+            </table>
+        </div><!-- table1-->
+
+        <div hidden id="table2" class="savedCourses" style="overflow-y: scroll">
+                <table  id="titleCS" background="\gui\greyBG.png" style="width:500px;margin-top:70px">
+                    <tr id="courseCS" style="color:rgb(85, 241, 252); font-size:20px; margin-bottom: 0px">
+                        <b></b>
+                    </tr>
+                </table>
+    
+                <table  id="tabCS2" background="\gui\greyBG.png" style="width:500px" border=1 frame=void rules=rows>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Number</b>
+                        </td>
+                        <td id="numberCS2" style="color:white; font-size:18px"></td>
+    
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Section</b>
+                        </td>
+                        <td id="sectionCS2" style="color:white; font-size:18px"></td>
+    
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Times</b>
+                        </td>
+                        <td id="timesCS2" style="color:white; font-size:18px"></td>
+    
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Room</b>
+                        </td>
+                        <td id="roomCS2" style="color:white; font-size:18px"></td>
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Instructor</b>
+                        </td>
+                        <td id="instructorCS2" style="color:white; font-size:18px"></td>
+    
+                    </tr>
+                    <tr>
+                        <td style="color:white; font-size:18px">
+                            <b>Date</b>
+                        </td>
+                        <td id="datesCS2" style="color:white; font-size:18px"></td>
+    
+                    </tr>
+    
+                    <tr>
+    
+                        <td style="color:bisque;font-size:18px">
+                            <b>Pre-requesites</b>
+                        </td>
+                        <td id="prerequesitesCS2" style="color:white; font-size:18px"></td>                       
+                    </tr>
+    
+                    <tr>
+                        <td style="color:bisque;font-size:18px">
+                            <b></b>
+                        </td>
+                        <td class="infos">
+                            <a id="detailsCS2" style="color:rgb(141, 243, 155); font-size: 18px" href="#" target="_blank" git>Click to read more details...</a>
+                        </td>
+                    </tr>
+    
+                </table>
+            </div>
+
+
+            
+                            
+                            <div hidden id="table3" class="savedCourses">
+                                    <table  id="titleCS3" background="\gui\greyBG.png" style="width:500px;margin-top:70px">
+                                        <tr id="courseCS3" style="color:rgb(85, 241, 252); font-size:20px; margin-bottom: 0px">
+                                            <b></b>
+                                        </tr>
+                                    </table>
+                        
+                                    <table  id="tabCS3" background="\gui\greyBG.png" style="width:500px" border=1 frame=void rules=rows>
+                                        <tr>
+                                            <td style="color:white; font-size:18px">
+                                                <b>Number</b>
+                                            </td>
+                                            <td id="numberCS3" style="color:white; font-size:18px"></td>
+                        
+                                        </tr>
+                                        <tr>
+                                            <td style="color:white; font-size:18px">
+                                                <b>Section</b>
+                                            </td>
+                                            <td id="sectionCS3" style="color:white; font-size:18px"></td>
+                        
+                                        </tr>
+                                        <tr>
+                                            <td style="color:white; font-size:18px">
+                                                <b>Times</b>
+                                            </td>
+                                            <td id="timesCS3" style="color:white; font-size:18px"></td>
+                        
+                                        </tr>
+                                        <tr>
+                                            <td style="color:white; font-size:18px">
+                                                <b>Room</b>
+                                            </td>
+                                            <td id="roomCS3" style="color:white; font-size:18px"></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="color:white; font-size:18px">
+                                                <b>Instructor</b>
+                                            </td>
+                                            <td id="instructorCS3" style="color:white; font-size:18px"></td>
+                        
+                                        </tr>
+                                        <tr>
+                                            <td style="color:white; font-size:18px">
+                                                <b>Date</b>
+                                            </td>
+                                            <td id="datesCS3" style="color:white; font-size:18px"></td>
+                        
+                                        </tr>
+                        
+                                        <tr>
+                        
+                                            <td style="color:bisque;font-size:18px">
+                                                <b>Pre-requesites</b>
+                                            </td>
+                                            <td id="prerequesitesCS3" style="color:white; font-size:18px"></td>                       
+                                        </tr>
+                        
+                                        <tr>
+                                            <td style="color:bisque;font-size:18px">
+                                                <b></b>
+                                            </td>
+                                            <td class="infos">
+                                                <a id="detailsCS3" style="color:rgb(141, 243, 155); font-size: 18px" href="#" target="_blank" git>Click to read more details...</a>
+                                            </td>
+                                        </tr>
+                        
+                                    </table>
+                                </div>                    
+
+                                <div hidden id="table4" class="savedCourses">
+                                        <table  id="titleCS4" background="\gui\greyBG.png" style="width:500px;margin-top:70px">
+                                            <tr id="courseCS4" style="color:rgb(85, 241, 252); font-size:20px; margin-bottom: 0px">
+                                                <b></b>
+                                            </tr>
+                                        </table>
+                            
+                                        <table  id="tabCS4" background="\gui\greyBG.png" style="width:500px" border=1 frame=void rules=rows>
+                                            <tr>
+                                                <td style="color:white; font-size:18px">
+                                                    <b>Number</b>
+                                                </td>
+                                                <td id="numberCS4" style="color:white; font-size:18px"></td>
+                            
+                                            </tr>
+                                            <tr>
+                                                <td style="color:white; font-size:18px">
+                                                    <b>Section</b>
+                                                </td>
+                                                <td id="sectionCS4" style="color:white; font-size:18px"></td>
+                            
+                                            </tr>
+                                            <tr>
+                                                <td style="color:white; font-size:18px">
+                                                    <b>Times</b>
+                                                </td>
+                                                <td id="timesCS4" style="color:white; font-size:18px"></td>
+                            
+                                            </tr>
+                                            <tr>
+                                                <td style="color:white; font-size:18px">
+                                                    <b>Room</b>
+                                                </td>
+                                                <td id="roomCS4" style="color:white; font-size:18px"></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="color:white; font-size:18px">
+                                                    <b>Instructor</b>
+                                                </td>
+                                                <td id="instructorCS4" style="color:white; font-size:18px"></td>
+                            
+                                            </tr>
+                                            <tr>
+                                                <td style="color:white; font-size:18px">
+                                                    <b>Date</b>
+                                                </td>
+                                                <td id="datesCS4" style="color:white; font-size:18px"></td>
+                            
+                                            </tr>
+                            
+                                            <tr>
+                            
+                                                <td style="color:bisque;font-size:18px">
+                                                    <b>Pre-requesites</b>
+                                                </td>
+                                                <td id="prerequesitesCS4" style="color:white; font-size:18px"></td>                       
+                                            </tr>
+                            
+                                            <tr>
+                                                <td style="color:bisque;font-size:18px">
+                                                    <b></b>
+                                                </td>
+                                                <td class="infos">
+                                                    <a id="detailsCS4" style="color:rgb(141, 243, 155); font-size: 18px" href="#" target="_blank" git>Click to read more details...</a>
+                                                </td>
+                                            </tr>
+                            
+                                        </table>
+                                    </div>
+
+                                    <div hidden id="table5" class="savedCourses">
+                                            <table  id="titleCS5" background="\gui\greyBG.png" style="width:500px;margin-top:70px">
+                                                <tr id="courseCS5" style="color:rgb(85, 241, 252); font-size:20px; margin-bottom: 0px">
+                                                    <b></b>
+                                                </tr>
+                                            </table>
+                                
+                                            <table  id="tabCS5" background="\gui\greyBG.png" style="width:500px" border=1 frame=void rules=rows>
+                                                <tr>
+                                                    <td style="color:white; font-size:18px">
+                                                        <b>Number</b>
+                                                    </td>
+                                                    <td id="numberCS5" style="color:white; font-size:18px"></td>
+                                
+                                                </tr>
+                                                <tr>
+                                                    <td style="color:white; font-size:18px">
+                                                        <b>Section</b>
+                                                    </td>
+                                                    <td id="sectionCS5" style="color:white; font-size:18px"></td>
+                                
+                                                </tr>
+                                                <tr>
+                                                    <td style="color:white; font-size:18px">
+                                                        <b>Times</b>
+                                                    </td>
+                                                    <td id="timesCS5" style="color:white; font-size:18px"></td>
+                                
+                                                </tr>
+                                                <tr>
+                                                    <td style="color:white; font-size:18px">
+                                                        <b>Room</b>
+                                                    </td>
+                                                    <td id="roomCS5" style="color:white; font-size:18px"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="color:white; font-size:18px">
+                                                        <b>Instructor</b>
+                                                    </td>
+                                                    <td id="instructorCS5" style="color:white; font-size:18px"></td>
+                                
+                                                </tr>
+                                                <tr>
+                                                    <td style="color:white; font-size:18px">
+                                                        <b>Date</b>
+                                                    </td>
+                                                    <td id="datesCS5" style="color:white; font-size:18px"></td>
+                                
+                                                </tr>
+                                
+                                                <tr>
+                                
+                                                    <td style="color:bisque;font-size:18px">
+                                                        <b>Pre-requesites</b>
+                                                    </td>
+                                                    <td id="prerequesitesCS5" style="color:white; font-size:18px"></td>                       
+                                                </tr>
+                                
+                                                <tr>
+                                                    <td style="color:bisque;font-size:18px">
+                                                        <b></b>
+                                                    </td>
+                                                    <td class="infos">
+                                                        <a id="detailsCS5" style="color:rgb(141, 243, 155); font-size: 18px" href="#" target="_blank" git>Click to read more details...</a>
+                                                    </td>
+                                                </tr>
+                                
+                                            </table>
+                                        </div>                            
+
+                                        <div hidden id="table6" class="savedCourses">
+                                                <table  id="titleCS6" background="\gui\greyBG.png" style="width:500px;margin-top:70px">
+                                                    <tr id="courseCS6" style="color:rgb(85, 241, 252); font-size:20px; margin-bottom: 0px">
+                                                        <b></b>
+                                                    </tr>
+                                                </table>
+                                    
+                                                <table  id="tabCS6" background="\gui\greyBG.png" style="width:500px" border=1 frame=void rules=rows>
+                                                    <tr>
+                                                        <td style="color:white; font-size:18px">
+                                                            <b>Number</b>
+                                                        </td>
+                                                        <td id="numberCS6" style="color:white; font-size:18px"></td>
+                                    
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:white; font-size:18px">
+                                                            <b>Section</b>
+                                                        </td>
+                                                        <td id="sectionCS6" style="color:white; font-size:18px"></td>
+                                    
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:white; font-size:18px">
+                                                            <b>Times</b>
+                                                        </td>
+                                                        <td id="timesCS6" style="color:white; font-size:18px"></td>
+                                    
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:white; font-size:18px">
+                                                            <b>Room</b>
+                                                        </td>
+                                                        <td id="roomCS6" style="color:white; font-size:18px"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:white; font-size:18px">
+                                                            <b>Instructor</b>
+                                                        </td>
+                                                        <td id="instructorCS6" style="color:white; font-size:18px"></td>
+                                    
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="color:white; font-size:18px">
+                                                            <b>Date</b>
+                                                        </td>
+                                                        <td id="datesCS6" style="color:white; font-size:18px"></td>
+                                    
+                                                    </tr>
+                                    
+                                                    <tr>
+                                    
+                                                        <td style="color:bisque;font-size:18px">
+                                                            <b>Pre-requesites</b>
+                                                        </td>
+                                                        <td id="prerequesitesCS6" style="color:white; font-size:18px"></td>                       
+                                                    </tr>
+                                    
+                                                    <tr>
+                                                        <td style="color:bisque;font-size:18px">
+                                                            <b></b>
+                                                        </td>
+                                                        <td class="infos">
+                                                            <a id="detailsCS6" style="color:rgb(141, 243, 155); font-size: 18px" href="#" target="_blank" git>Click to read more details...</a>
+                                                        </td>
+                                                    </tr>
+                                    
+                                                </table>
+                                            </div>
+
+                                            <div hidden id="table7" class="savedCourses">
+                                                    <table  id="titleCS7" background="\gui\greyBG.png" style="width:500px;margin-top:70px">
+                                                        <tr id="courseCS7" style="color:rgb(85, 241, 252); font-size:20px; margin-bottom: 0px">
+                                                            <b></b>
+                                                        </tr>
+                                                    </table>
+                                        
+                                                    <table  id="tabCS2" background="\gui\greyBG.png" style="width:500px" border=1 frame=void rules=rows>
+                                                        <tr>
+                                                            <td style="color:white; font-size:18px">
+                                                                <b>Number</b>
+                                                            </td>
+                                                            <td id="numberCS7" style="color:white; font-size:18px"></td>
+                                        
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="color:white; font-size:18px">
+                                                                <b>Section</b>
+                                                            </td>
+                                                            <td id="sectionCS7" style="color:white; font-size:18px"></td>
+                                        
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="color:white; font-size:18px">
+                                                                <b>Times</b>
+                                                            </td>
+                                                            <td id="timesCS7" style="color:white; font-size:18px"></td>
+                                        
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="color:white; font-size:18px">
+                                                                <b>Room</b>
+                                                            </td>
+                                                            <td id="roomCS7" style="color:white; font-size:18px"></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="color:white; font-size:18px">
+                                                                <b>Instructor</b>
+                                                            </td>
+                                                            <td id="instructorCS7" style="color:white; font-size:18px"></td>
+                                        
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="color:white; font-size:18px">
+                                                                <b>Date</b>
+                                                            </td>
+                                                            <td id="datesCS7" style="color:white; font-size:18px"></td>
+                                        
+                                                        </tr>
+                                        
+                                                        <tr>
+                                        
+                                                            <td style="color:bisque;font-size:18px">
+                                                                <b>Pre-requesites</b>
+                                                            </td>
+                                                            <td id="prerequesitesCS7" style="color:white; font-size:18px"></td>                       
+                                                        </tr>
+                                        
+                                                        <tr>
+                                                            <td style="color:bisque;font-size:18px">
+                                                                <b></b>
+                                                            </td>
+                                                            <td class="infos">
+                                                                <a id="detailsCS7" style="color:rgb(141, 243, 155); font-size: 18px" href="#" target="_blank" git>Click to read more details...</a>
+                                                            </td>
+                                                        </tr>
+                                        
+                                                    </table>
+                                                </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

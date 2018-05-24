@@ -1,0 +1,5 @@
+Basic Course:
+The User clicks the View Recommended Plan button, the system asks the User if they are a 2+2 student. If the User is doing the 2+2 program, the system redirects them to the 2+2 page of the University’s recommended academic plan. If the User is not a 2+2 student, the system redirects them to the University’s recommended academic plan for four year students according to their major.
+ 
+Alternative Courses:
+User not logged in: The system displays a message explaining to the user that they are not logged in. It then redirects the user to the LionPath login page. 

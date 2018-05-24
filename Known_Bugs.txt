@@ -1,0 +1,10 @@
+Must fix the courses in degree audit json to work with the status of course, can use image in the status html for the tables. - Josh
+
+Class Scraper needs different section accomadations.
+
+Plan scrapers some bugs making the json for some- Josh
+
+Degree audit handling dual majors is weird.
+
+Class search is only for harrisburg I believe, How will this work with other campuses searching?
+
